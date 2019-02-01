@@ -1,0 +1,72 @@
+    <p>
+        <strong>Username:</strong>
+        <%= @user.name %>
+      </p>
+       
+      <p>
+        <strong>Email:</strong>
+        <%= @user.email %>
+      </p>
+
+      <p>
+          <strong>Email:</strong>
+          <%= @user.password %>
+        </p>
+      <p>
+            <strong>Role:</strong>
+            <%= @user.role %>
+      </p>  
+      
+     
+      <% if @user.name == "admin" %>
+          <%= link_to 'List Users and tasks', controller: 'users' %>
+      <% end %>
+
+      <h2>Tasks</h2>
+      <% @user.task.each do |task| %>
+        <p>
+          <strong>Title:</strong>
+          <%= task.title %>
+        </p>
+       
+        <p>
+          <strong>Description:</strong>
+          <%= task.description %>
+        </p>
+        <p>
+            <strong>Start:</strong>
+            <%= task.start %>
+        </p>
+        <p>
+            <strong>End:</strong>
+            <%= task.end %>
+        </p>
+
+      <% end %>
+       
+      <h2>Add a task:</h2>
+      <%= form_with(model: [ @user, @user.task.build ], local: true) do |form| %>
+        <p>
+          <%= form.label :title %><br>
+          <%= form.text_field :title %>
+        </p>
+        <p>
+          <%= form.label :description %><br>
+          <%= form.text_area :description %>
+        </p>
+        <p>
+            <%= form.label :start %><br>
+            <%= form.text_field :start %>
+          </p>
+          <p>
+            <%= form.label :end %><br>
+            <%= form.text_field :end %>
+          </p>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
+       
+      <%= link_to 'Edit', edit_user_path(@user) %> |
+      <%= link_to 'Back', users_path %>
+      

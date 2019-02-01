@@ -1,0 +1,32 @@
+
+      <p>
+        <strong>Title:</strong>
+        <%= @user.Name %>
+      </p>
+       
+       
+      <h2>Add a Task:</h2>
+      <%= form_with(model: [ @user, @user.tasks.build ], local: true) do |form| %>
+        <p>
+          <%= form.label :title %><br>
+          <%= form.text_field :title %>
+        </p>
+        <p>
+          <%= form.label :description %><br>
+          <%= form.text_area :description %>
+        </p>
+        <p>
+        <%= form.label :start %><br>
+        <%= form.text_field :start %>
+        </p>
+        <p>
+        <%= form.label :end %><br>
+        <%= form.text_field :end %>
+        </p>
+        <p>
+          <%= form.submit  %>
+        </p>
+      <% end %>
+       
+      <%= link_to 'Edit', edit_user_path(@user) %> |
+      <%= link_to 'Back', users_path %>

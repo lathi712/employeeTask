@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ruby-rails-deployment
+  labels:
+    app: ruby
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ruby
+  template:
+    metadata:
+      labels:
+        app: ruby
+    spec:
+      volumes:
+      - name: db-volume
+        configMap:
+          name: db-config
+      containers:
+      - name: ruby
+        image: eu.gcr.io/usertask/ruby:latest
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+          - mountPath: /config/
+            name: db-volume
