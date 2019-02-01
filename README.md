@@ -20,5 +20,7 @@ If application reaches above 50% new pod will be created and will serve the traf
 Used Cloud DNS and Goole Domain to Host the application on Google Cloud Platform.
 
 URL : http://shftplan-task.worspace712.com
+
 Github: https://github.com/lathi712/employeeTask
+
 GCR: eu.gcr.io/usertask/ruby
