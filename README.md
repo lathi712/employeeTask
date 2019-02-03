@@ -22,13 +22,13 @@ Used Cloud DNS and Goole Domain to Host the application on Google Cloud Platform
 
 Steps :
 
-1. Built a application Usin Ruby on Rails and Mysql
+1. Built a application Using Ruby on Rails and Mysql
 
 2. Containerised the Ruby aaplication using docker and pushed the docker image to GCR repo.
 
 3. Created a GKE cluster in Google Cloud Platform with min 1 and max 3 nodes.
 
-4. Deployed the applucation using Kubernetes.
+4. Deployed the application using Kubernetes.
 
 5. Application can scale upto 10 pods if the traffic increases and CPU reaches 50%.
 
