@@ -36,10 +36,10 @@ Steps :
 
 7. Created Cloud DNS in Google Cloud Platform for Application and Jenkins.
 
-URL : http://shftplan-task.worspace712.com
+URL : http://shftplan-task.worspace712.com (email: admin@gmail.com and password: admin)
 
-Jenkins URL: http://jenkins.worspace712.com
+Jenkins URL: http://jenkins.worspace712.com (user:admin and password: admin)
 
-Github: https://github.com/lathi712/employeeTask
+Github: https://github.com/lathi712/employeeTask 
 
 GCR: eu.gcr.io/usertask/
