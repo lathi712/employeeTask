@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing tasks</h1>
+
+<table>
+ <tr>
+   <th>Title</th>
+   <th>Description</th>
+   <th>Start</th>
+   <th>End</th>
+ </tr>
+
+ <% @task.each do |task| %>
+   <tr>
+     <td><%= task.title%></td>
+     <td><%= task.description %></td>
+     <td><%= task.start%></td>
+     <td><%= task.end %></td>
+     <td><%= link_to 'Show', task_path(task) %></td>
+     <td><%= link_to 'Edit', edit_task_path(task) %></td>
+     <td><%= link_to 'Destroy', task_path(task),
+        method: :delete,
+        data: { confirm: 'Delete Task?' } %></td>
+   </tr>
+ <% end %>
+</table>

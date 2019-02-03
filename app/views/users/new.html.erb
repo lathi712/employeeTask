@@ -1,3 +1,11 @@
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
 <%= form_with scope: :user, url: users_path, local: true do |form| %>
 
 <% if @user.errors.any? %>
@@ -14,25 +22,26 @@
 </div>
 <% end %>
 
-
+<div class="container form-group">
 <p>
   <%= form.label :name %><br>
-  <%= form.text_field :name %>
+  <%= form.text_field :name ,:class => 'form-control'%>
 </p>
 
 <p>
   <%= form.label :email %><br>
-  <%= form.text_field :email %>
+  <%= form.email_field :email ,:class => 'form-control'%>
 </p>
 
 <p>
     <%= form.label :password %><br>
-    <%= form.text_field :password %>
+    <%= form.password_field :password ,:class => 'form-control'%>
 </p>
 
 <p>
-  <%= form.submit %>
+  <%= form.submit 'Submit', :class => 'btn btn-default'  %>
 </p>
 <% end %>
 
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', root_path, :class => 'btn btn-default' %>
+</div>

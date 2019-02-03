@@ -5,8 +5,7 @@
 <% if @user.errors.any? %>
 <div id="error_explanation">
   <h2>
-    <%= pluralize(@users.errors.count, "error") %> prohibited
-    this article from being saved:
+    <%= pluralize(@users.errors.count, "error") %> Edit Successfull
   </h2>
   <ul>
     <% @user.errors.full_messages.each do |msg| %>
@@ -24,12 +23,12 @@
 
 <p>
   <%= form.label :email %><br>
-  <%= form.text_field :email %>
+  <%= form.email_field :email %>
 </p>
 
 <p>
     <%= form.label :password %><br>
-    <%= form.text_field :password %>
+    <%= form.password_field :password %>
 </p>
 
 <p>

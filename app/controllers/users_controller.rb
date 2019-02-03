@@ -22,9 +22,12 @@ class UsersController < ApplicationController
         print @x
 
         @user = User.authenticate(@x, @y)
+        
+        
         #@user = User.where("email = ?", params[:email]).select( "name, email, password")
-        if User.exists?( email: @user.email ) && User.exists?( password: @user.password )
-            render 'show'      
+        
+        if User.exists?( email: @x ) && User.exists?( password: @y )
+            redirect_to @user     
         else
             render 'login'
         end 

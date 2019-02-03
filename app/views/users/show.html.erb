@@ -1,4 +1,16 @@
-    <p>
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+<p id="notice"><%= notice %></p>
+<%= link_to 'Logout', root_path, :class => 'btn btn-default'%>  
+<div class="container">
+    <div class="jumbotron">    
+<p>
         <strong>Username:</strong>
         <%= @user.name %>
       </p>
@@ -6,24 +18,20 @@
       <p>
         <strong>Email:</strong>
         <%= @user.email %>
-      </p>
-
-      <p>
-          <strong>Email:</strong>
-          <%= @user.password %>
-        </p>
-      <p>
-            <strong>Role:</strong>
-            <%= @user.role %>
-      </p>  
+      </p> 
       
      
       <% if @user.name == "admin" %>
           <%= link_to 'List Users and tasks', controller: 'users' %>
       <% end %>
-
+    </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron">  
       <h2>Tasks</h2>
       <% @user.task.each do |task| %>
+      <div class="container">
+          <div class="jumbotron">  
         <p>
           <strong>Title:</strong>
           <%= task.title %>
@@ -41,32 +49,39 @@
             <strong>End:</strong>
             <%= task.end %>
         </p>
-
+          </div>
+          </div>
       <% end %>
-       
-      <h2>Add a task:</h2>
+        </div>
+        </div>
+      
+
       <%= form_with(model: [ @user, @user.task.build ], local: true) do |form| %>
-        <p>
+      <div class="container form-group"> 
+          <h2>Add a task:</h2>
+      <p>
           <%= form.label :title %><br>
-          <%= form.text_field :title %>
+          <%= form.text_field :title ,:class => 'form-control'%>
         </p>
         <p>
           <%= form.label :description %><br>
-          <%= form.text_area :description %>
+          <%= form.text_area :description, :class => 'form-control' %>
         </p>
         <p>
             <%= form.label :start %><br>
-            <%= form.text_field :start %>
+            <%= form.text_field :start, :class => 'form-control' %>
           </p>
           <p>
             <%= form.label :end %><br>
-            <%= form.text_field :end %>
+            <%= form.text_field :end , :class => 'form-control'%>
           </p>
         <p>
-          <%= form.submit %>
+          <%= form.submit 'Submit' , :class => 'btn btn-default'%>
         </p>
+        <%= link_to 'Edit', edit_user_path(@user) %> |
+        <%= link_to 'Back', users_path %>
+      </div>  
       <% end %>
        
-      <%= link_to 'Edit', edit_user_path(@user) %> |
-      <%= link_to 'Back', users_path %>
+      
       

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ruby-rails-deployment
+  name: ruby-BUILDNO
   labels:
     app: ruby
 spec:
@@ -20,7 +20,7 @@ spec:
           name: db-config
       containers:
       - name: ruby
-        image: eu.gcr.io/usertask/ruby:latest
+        image: DIMG
         ports:
         - containerPort: 3000
         volumeMounts:
