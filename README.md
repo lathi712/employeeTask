@@ -6,6 +6,7 @@ Docker - Containerization
 Kubernetes - Orchestration Tool
 Google Cloud - Google Kubernetes Engine(GKE), Cloud DNS , Google Container Registry(GCR)
 Visual Code - Editor
+Jenkins - CICD
 
 
 Description
@@ -19,8 +20,26 @@ Condition (Min:1 , Max: 10 , CPU Threshold: 50%)
 If application reaches above 50% new pod will be created and will serve the traffic.
 Used Cloud DNS and Goole Domain to Host the application on Google Cloud Platform.
 
+Steps :
+
+1. Built a application Usin Ruby on Rails and Mysql
+
+2. Containerised the Ruby aaplication using docker and pushed the docker image to GCR repo.
+
+3. Created a GKE cluster in Google Cloud Platform with min 1 and max 3 nodes.
+
+4. Deployed the applucation using Kubernetes.
+
+5. Application can scale upto 10 pods if the traffic increases and CPU reaches 50%.
+
+6. Jenkins is used to Pull code from Github, Build a docker image and Deploy to Kubernetes Cluster.
+
+7. Created Cloud DNS in Google Cloud Platform for Application and Jenkins.
+
 URL : http://shftplan-task.worspace712.com
+
+Jenkins URL: http://jenkins.worspace712.com
 
 Github: https://github.com/lathi712/employeeTask
 
-GCR: eu.gcr.io/usertask/ruby
+GCR: eu.gcr.io/usertask/
