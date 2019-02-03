@@ -30,7 +30,7 @@ Steps :
 
 4. Deployed the application using Kubernetes.
 
-5. Application can scale upto 10 pods if the traffic increases and CPU reaches 50%.
+5. Application can scale upto 10 pods(HPA min 1 max 10 cpu 50%) if the traffic increases and CPU reaches 50%.
 
 6. Jenkins is used to Pull code from Github, Build a docker image and Deploy to Kubernetes Cluster.
 
