@@ -7,6 +7,7 @@ Kubernetes - Orchestration Tool
 Google Cloud - Google Kubernetes Engine(GKE), Cloud DNS , Google Container Registry(GCR)
 Visual Code - Editor
 Jenkins - CICD
+Cloud Build
 
 
 Description
