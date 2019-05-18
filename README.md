@@ -1,7 +1,7 @@
-Technologies Used
+Technologies Used 
 
 Ruby on Rails - Backend Development
-Mysql - Database
+Mysql - DB
 Docker - Containerization
 Kubernetes - Orchestration Tool
 Google Cloud - Google Kubernetes Engine(GKE), Cloud DNS , Google Container Registry(GCR)
